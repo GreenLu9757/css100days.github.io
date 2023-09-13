@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(47, 128, 126, 0.733);
+    /* box-shadow: 3px 3px 5px rgba(33, 62, 61, 0.933); */
+}
+
+.frame {
+    position: absolute;
+    inset: 20% 10%;
+    border-radius: 2px;
+    box-shadow: 5px 5px 2px #0003;
+    overflow: hidden;
+}
+
+.title {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 30%;
+    background-color: #F1BA64;
+}
+
+.title span {
+    color: #fff;
+}
+
+.title span:nth-child(1) {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.title span:nth-child(2) {
+    position: absolute;
+    top: calc(35%);
+    right: 5%;
+    font-size: 12px;
+}
+
+.title span:nth-child(3) {
+    position: absolute;
+    top: 55%;
+    left: 5%;
+}
+
+.title span:nth-child(4) {
+    position: absolute;
+    top: 55%;
+    right: 5%;
+    font-weight: 700;
+}
+
+.chart {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 70%;
+    background-color: #fff;
+}
+
+.chart .text {
+    height: 20%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.text span {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.text span:nth-child(1):before {
+    content: '';
+    margin-right: 5px;
+    display: inline-block;
+    width: 10px;
+    height: 2px;
+    background-color: #FA7373;
+    border-radius: 5px;
+}
+
+.text span:nth-child(2):before {
+    content: '';
+    margin: 0 5px 0 15px;
+    display: inline-block;
+    width: 10px;
+    height: 2px;
+    background-color: #7BA2FF;
+    border-radius: 5px;
+}
+
+.statistics {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 80%;
+    padding: 0 12px;
+}
+
+.line-01 {
+    border-top: 2px solid #aaa5;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.line-02 {
+    border-top: 2px solid #aaa5;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.line-03 {
+    border-top: 2px solid #aaa5;
+    width: 100%;
+}
+
+.data {
+    position: absolute;
+    width: 100%
+}
+
+.red {
+    top: -25%;
+    left: 10%;
+    stroke: #FA7373;
+}
+
+.blue {
+    top: 15%;
+    left: 10%;
+    stroke: #7BA2FF;
+}
+
+.dot {
+    position: absolute;
+    z-index: 10;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.data.red .dot {
+    background-color: #FA7373;
+}
+
+.data.red :nth-child(2):hover~:nth-child(9),
+.data.red :nth-child(3):hover~:nth-child(10),
+.data.red :nth-child(4):hover~:nth-child(11),
+.data.red :nth-child(5):hover~:nth-child(12),
+.data.red :nth-child(6):hover~:nth-child(13),
+.data.red :nth-child(7):hover~:nth-child(14),
+.data.red :nth-child(8):hover~:nth-child(15){
+    opacity: 1;
+}
+
+
+.data.red .dot-01 {
+    top: 38%;
+    left: 2%;
+}
+
+.data.red .dot-02 {
+    top: 30%;
+    left: 14%;
+}
+
+.data.red .dot-03 {
+    top: 40%;
+    left: 27%;
+}
+
+.data.red .dot-04 {
+    top: 34%;
+    left: 40%;
+}
+
+.data.red .dot-05 {
+    top: 37%;
+    left: 52%;
+}
+
+.data.red .dot-06 {
+    top: 46%;
+    left: 65%;
+}
+.data.red .dot-07 {
+    top: 39%;
+    left: 78%;
+}
+
+
+
+.point {
+    font-size: 5px;
+    text-align: center;
+    padding-top: 5px;
+    color: #fff;
+    font-weight: 600;
+    width: 30px;
+    height: 30px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0% 80%);
+    opacity: 0;
+    transition: all .5s;
+}
+.dot-01:hover{
+    background-color: #fff;
+}
+.data.red .point {
+    background-color: #FA7373;
+}
+
+.data.red .point-01 {
+    position: absolute;
+    top: 15%;
+    left: -2%;
+}
+
+.data.red .point-02 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.data.red .point-03 {
+    position: absolute;
+    top: 15%;
+    left: 23%;
+}
+
+.data.red .point-04 {
+    position: absolute;
+    top: 10%;
+    left: 36%;
+}
+
+.data.red .point-05 {
+    position: absolute;
+    top: 15%;
+    left: 48%;
+}
+
+.data.red .point-06 {
+    position: absolute;
+    top: 23%;
+    left: 61%;
+}
+
+.data.red .point-07 {
+    position: absolute;
+    top: 18%;
+    left: 74%;
+}
+
+.date {
+    position: absolute;
+    bottom: 8%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.date span {
+    font-size: 12px;
+    margin: 0 6px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+polyline {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+
+}
